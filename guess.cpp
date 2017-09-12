@@ -13,15 +13,15 @@ int main()
     int r;
     int randomNumber;
     string mode;
-    /*
-    randomNumber = rand() % 10 + 1
-    cout<<"Guess a number between 1 and 10.";
-    cin>>guess;
-    */
+    string playAgain;
+
     // Starting message that greets player and asks them to choose difficulty
-    cout<<"Welcome! Choose your difficulty!"<<endl;
+    cout<<"==============================================================================="<<endl;
+    cout<<"Welcome, this is a number guessing game. Choose your difficulty!"<<endl;
     cout<<"Input e for easy, m for Medium, h for Hard."<<endl;
+    
     cin>>mode;
+    
     if(mode == "e")
     {
         randomNumber = rand() % 2 + 1;
@@ -45,7 +45,7 @@ int main()
             cin>>guess;
         }
     }
-    else if(mode == "h")
+    if(mode == "h")
     {
         randomNumber = rand() % 100 + 1;
         cout<<"Choose a number between 1 and 100! You only get 3 guesses!"<<endl;
@@ -84,21 +84,57 @@ int main()
 
     if(guess == randomNumber)
     {
-        cout<<"You, guessed correctly! You win!";
+        cout<<"You, guessed correctly! You win!"<<endl;
+        cout<<"Would you like to play again? (Y/N)"<<endl;
+        cin>>playAgain;
+
+        if(playAgain == "Y")
+        {
+            main();
+        }
+        else
+        {
+            return 0;
+        }
     }
-    else if(guess != randomNumber)
+    if(guess != randomNumber)
     {
         if(guess > randomNumber)
         {
             r = guess - randomNumber;
-            cout<<"You were off by "<<r<<". Sorry, you lose."<<endl;
+            cout<<"You were off by "<<r<<" places above the secret number. Sorry, you lose."<<endl;
+            cout<<"Would you like to play again? (Y/N)"<<endl;
+            cin>>playAgain;
+
+            if(playAgain == "Y")
+            {
+                main();
+            }
+            else
+            {
+                return 0;
+            }
+
         }
-        else
+        else if(guess < randomNumber)
         {
-        r = randomNumber - guess;
-        cout<<"You were off by "<<r<<". Sorry, you lose."<<endl;
+            r = randomNumber - guess;
+            cout<<"You were off by "<<r<<" places below the secret number. Sorry, you lose."<<endl;
+            cout<<"Would you like to play again? (Y/N)"<<endl;
+            cin>>playAgain;
+
+            if(playAgain == "Y")
+            {
+                main();
+            }
+            else
+            {
+                return 0;
+            }
+
         }
     }
     
     return 0;
 }
+
