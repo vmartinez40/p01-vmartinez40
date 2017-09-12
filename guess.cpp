@@ -36,15 +36,52 @@ int main()
         cin>>guess;
         if(guess > randomNumber)
         {
-            cout<<"Your guess is higher than the secret number! You have 1 guess left!"<<endl;
+            cout<<"Your guess is greater than the secret number! You have 1 guess left!"<<endl;
             cin>>guess;
         }
         else
         {
-            cout<<"Your guess is lower than the secret number! You have 1 guess left!"<<endl;
+            cout<<"Your guess is less than the secret number! You have 1 guess left!"<<endl;
             cin>>guess;
         }
     }
+    else if(mode == "h")
+    {
+        randomNumber = rand() % 100 + 1;
+        cout<<"Choose a number between 1 and 100! You only get 3 guesses!"<<endl;
+        cin>>guess;
+        if(guess > randomNumber)
+        {
+            cout<<"Your guess is greater than the secret number! You have 2 guesses left!"<<endl;
+            cin>>guess;
+            if(guess > randomNumber)
+            {
+                cout<<"Your guess is greater than the secret number! You have 1 guess left!"<<endl;
+                cin>>guess;
+            }
+            else
+            {
+                cout<<"Your guess is less than the secret number! You have 1 guess left!"<<endl;
+                cin>>guess;
+            }
+        }
+        else if(guess < randomNumber)
+        {
+            cout<<"Your guess is less than the secret number! You have 2 gueses left!"<<endl;
+            cin>>guess;
+            if(guess > randomNumber)
+            {
+                cout<<"Your guess is greater than the secret number! You have 1 guess left!"<<endl;
+                cin>>guess;
+            }
+            else
+            {
+                cout<<"Your guess is less than the secret number! You have 1 guess left!"<<endl;
+                cin>>guess;
+            }
+        }
+    }
+
     if(guess == randomNumber)
     {
         cout<<"You, guessed correctly! You win!";
