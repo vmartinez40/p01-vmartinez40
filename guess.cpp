@@ -9,7 +9,6 @@ int main()
     srand ( time(NULL) );
    
     int guess;
-    int g1;int g2; int g3;
     int r;
     int randomNumber;
     string mode;
