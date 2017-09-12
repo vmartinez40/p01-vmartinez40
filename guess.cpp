@@ -20,7 +20,7 @@ int main()
     cout<<"Input e for easy, m for Medium, h for Hard."<<endl;
     
     cin>>mode;
-    
+    // Easy Mode
     if(mode == "e")
     {
         randomNumber = rand() % 2 + 1;
@@ -28,6 +28,7 @@ int main()
         cin>>guess;
         
     }
+    //Medium Mode
     else if(mode == "m")
     {
         randomNumber = rand() % 10 + 1;
@@ -44,6 +45,7 @@ int main()
             cin>>guess;
         }
     }
+    //Hard Mode
     if(mode == "h")
     {
         randomNumber = rand() % 100 + 1;
@@ -80,7 +82,7 @@ int main()
             }
         }
     }
-
+    //Checks if guess is correct
     if(guess == randomNumber)
     {
         cout<<"You, guessed correctly! You win!"<<endl;
@@ -96,6 +98,7 @@ int main()
             return 0;
         }
     }
+    //Checks how off you are
     if(guess != randomNumber)
     {
         if(guess > randomNumber)
