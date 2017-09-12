@@ -1,3 +1,16 @@
+/* 
+   Victor Martinez's Guessing Game Program
+   Includes Easy, Medium, and Hard Modes
+   You start off with 1 guess and get additional guesses as the game gets harder
+   At the end it asks the user if they would like to play again
+
+   Date: 9/12/17
+   Class: CSCI 111
+   Teacher: Kevin Buffardi
+   
+*/
+
+
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
